@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --tColor: #e7816b;
+  --dark: #1d1c1e;
+}
+
 body {
   width: 100vw;
   min-height: 100vh;
