@@ -8,6 +8,7 @@ import {
 import { Header } from "./layouts";
 import { About, Contact, Design, Home, Location } from "./pages";
 import styled from "styled-components";
+import Footer from "./layouts/Footer";
 
 const rootRoute = new RootRoute({
   component: Root,
@@ -64,6 +65,7 @@ function Root() {
     <Main>
       <Header />
       <Outlet />
+      <Footer />
     </Main>
   );
 }

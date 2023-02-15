@@ -9,6 +9,8 @@
 :root {
   --tColor: #e7816b;
   --dark: #1d1c1e;
+  --light: #ffffff;
+  --darkText: #333136;
 }
 
 body {

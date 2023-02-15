@@ -85,7 +85,8 @@ const Logo = styled.img`
 const Backdrop = styled.div`
   width: 100vw;
   height: calc(100vh - 96px);
-  position: absolute;
+  position: fixed;
+  z-index: 5;
   left: 0;
   top: 96px;
   background-color: rgba(0, 0, 0, 0.5);
