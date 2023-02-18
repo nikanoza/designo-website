@@ -6,7 +6,7 @@ const RightArrow = () => {
         stroke="#E7816B"
         stroke-width="2"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       />
     </svg>
   );

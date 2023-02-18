@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import styled, { css } from "styled-components";
 import { RightArrow } from "../../svg";
 
@@ -11,10 +12,16 @@ const Project: React.FC<PropsType> = ({ title, image, to }) => {
   return (
     <Main image={image}>
       <ProjectTitle>{title}</ProjectTitle>
-      <ViewProject>
-        <ViewProjectText>VIEW PROJECTS</ViewProjectText>
-        <RightArrow />
-      </ViewProject>
+      <Link
+        to="/design/$category"
+        params={{ category: to }}
+        style={{ textDecoration: "none" }}
+      >
+        <ViewProject>
+          <ViewProjectText>VIEW PROJECTS</ViewProjectText>
+          <RightArrow />
+        </ViewProject>
+      </Link>
     </Main>
   );
 };

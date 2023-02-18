@@ -9,20 +9,12 @@ import Project from "./Project";
 const Projects = () => {
   return (
     <Main>
-      <Project
-        title="WEB DESIGN"
-        image={WebDesignMobile}
-        to="/design/web-design"
-      />
-      <Project
-        title="APP DESIGN"
-        image={AppDesignMobile}
-        to="/design/app-design"
-      />
+      <Project title="WEB DESIGN" image={WebDesignMobile} to="web" />
+      <Project title="APP DESIGN" image={AppDesignMobile} to="app" />
       <Project
         title="GRAPHIC DESIGN"
         image={GraphicDesignMobile}
-        to="/design/graphic-design"
+        to="graphic"
       />
     </Main>
   );
