@@ -1,8 +1,14 @@
 import { useParams } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import {
+  AppDesignMobile,
+  GraphicDesignMobile,
+  WebDesignMobile,
+} from "../../assets";
 import { getCategoryProjects } from "../../axios";
 import { DesignProjects } from "../../components/design";
+import Project from "../../components/home/Project";
 import { ProjectType } from "../../types";
 
 const Design = () => {
@@ -12,7 +18,6 @@ const Design = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        console.log(category);
         const response = await getCategoryProjects(category || "");
         setData(response.data);
       } catch (error) {
@@ -34,6 +39,21 @@ const Design = () => {
       </Banner>
       <Wrapper>
         {data.length > 0 ? <DesignProjects projects={data} /> : null}
+        <ProjectsLinks>
+          {category !== "web" ? (
+            <Project title="WEB DESIGN" image={WebDesignMobile} to="web" />
+          ) : null}
+          {category !== "app" ? (
+            <Project title="APP DESIGN" image={AppDesignMobile} to="app" />
+          ) : null}
+          {category !== "graphic" ? (
+            <Project
+              title="GRAPHIC DESIGN"
+              image={GraphicDesignMobile}
+              to="graphic"
+            />
+          ) : null}
+        </ProjectsLinks>
       </Wrapper>
     </Page>
   );
@@ -77,4 +97,13 @@ const BannerDescription = styled.h2`
 const Wrapper = styled.div`
   width: 100%;
   padding: 0 24px;
+`;
+
+const ProjectsLinks = styled.ul`
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  margin-top: 96px;
 `;
