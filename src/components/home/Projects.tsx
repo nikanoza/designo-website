@@ -4,7 +4,7 @@ import {
   AppDesignMobile,
   WebDesignMobile,
 } from "../../assets";
-import Project from "./Project";
+import Project from "../shared/Project";
 
 const Projects = () => {
   return (

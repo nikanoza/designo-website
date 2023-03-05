@@ -7,8 +7,7 @@ import {
   WebDesignMobile,
 } from "../../assets";
 import { getCategoryProjects } from "../../axios";
-import { DesignProjects } from "../../components/design";
-import Project from "../../components/home/Project";
+import { DesignProjects, Project } from "../../components";
 import { ProjectType } from "../../types";
 
 const Design = () => {

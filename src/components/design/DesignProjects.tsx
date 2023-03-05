@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ProjectType } from "../../types";
-import Project from "./Project";
+import ProjectItem from "./ProjectItem";
 
 const DesignProjects: React.FC<{ projects: ProjectType[] }> = ({
   projects,
@@ -8,7 +8,7 @@ const DesignProjects: React.FC<{ projects: ProjectType[] }> = ({
   return (
     <ProjectList>
       {projects.map((project) => (
-        <Project key={project.title} project={project} />
+        <ProjectItem key={project.title} project={project} />
       ))}
     </ProjectList>
   );
