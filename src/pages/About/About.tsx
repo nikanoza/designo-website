@@ -1,21 +1,19 @@
 import styled from "styled-components";
-import { AboutHeroMobile, WorldTalentMobile } from "../../assets";
+import {
+  AboutHeroMobile,
+  AustraliaLocation,
+  CanadaLocation,
+  UkLocation,
+  DealMobile,
+  WorldTalentMobile,
+} from "../../assets";
+import { AboutHeader } from "../../components/about";
 
 const About = () => {
   return (
     <Page>
-      <AboutBanner>
-        <PosterImg src={AboutHeroMobile} alt="" />
-        <AboutTitle>about as</AboutTitle>
-        <AboutDescription>
-          Founded in 2010, we are a creative agency that produces lasting
-          results for our clients. We’ve partnered with many startups,
-          corporations, and nonprofits alike to craft designs that make real
-          impact. We’re always looking forward to creating brands, products, and
-          digital experiences that connect with our clients’ audiences.
-        </AboutDescription>
-      </AboutBanner>
-      <TalentContainer>
+      <AboutHeader />
+      {/* <TalentContainer>
         <PosterImg src={WorldTalentMobile} alt="" />
         <TalentTitle>World-class talent</TalentTitle>
         <TalentDescription>
@@ -30,7 +28,44 @@ const About = () => {
           have always been impressed with our high-quality outcomes that
           encapsulates their brand’s story and mission.
         </TalentDescription>
-      </TalentContainer>
+      </TalentContainer> */}
+      <AboutLocations>
+        <AboutLocation>
+          <LocationImageBox>
+            <LocationImage src={CanadaLocation} alt="" />
+          </LocationImageBox>
+          <LocationName>CANADA</LocationName>
+          <ViewLocation>SEE LOCATION</ViewLocation>
+        </AboutLocation>
+        <AboutLocation>
+          <LocationImageBox>
+            <LocationImage src={AustraliaLocation} alt="" />
+          </LocationImageBox>
+          <LocationName>AUSTRALIA</LocationName>
+          <ViewLocation>SEE LOCATION</ViewLocation>
+        </AboutLocation>
+        <AboutLocation>
+          <LocationImageBox>
+            <LocationImage src={UkLocation} alt="" />
+          </LocationImageBox>
+          <LocationName>UNITED KINGDOM</LocationName>
+          <ViewLocation>SEE LOCATION</ViewLocation>
+        </AboutLocation>
+      </AboutLocations>
+      {/* <TalentContainer style={{ marginTop: "120px" }}>
+        <PosterImg src={DealMobile} alt="" />
+        <TalentTitle>The real deal</TalentTitle>
+        <TalentDescription>
+          As strategic partners in our clients’ businesses, we are ready to take
+          on any challenge as our own. Solving real problems require empathy and
+          collaboration, and we strive to bring a fresh perspective to every
+          opportunity. We make design and technology more accessible and give
+          you tools to measure success. <br /> <br />
+          We are visual storytellers in appealing and captivating ways. By
+          combining business and marketing strategies, we inspire audiences to
+          take action and drive real results.
+        </TalentDescription>
+      </TalentContainer> */}
     </Page>
   );
 };
@@ -41,37 +76,6 @@ const Page = styled.main`
   width: 100%;
 `;
 
-const AboutBanner = styled.div`
-  width: 100%;
-  text-align: center;
-  background-color: var(--tColor);
-  padding-bottom: 80px;
-`;
-
-const PosterImg = styled.img`
-  width: 100%;
-`;
-
-const AboutTitle = styled.h1`
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 36px;
-  color: var(--light);
-  text-align: center;
-  text-transform: capitalize;
-  margin-top: 80px;
-`;
-
-const AboutDescription = styled.p`
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 25px;
-  color: var(--light);
-  text-align: center;
-  margin-top: 24px;
-  padding: 0 24px;
-`;
-
 const TalentContainer = styled.div`
   width: 100%;
   text-align: center;
@@ -79,10 +83,71 @@ const TalentContainer = styled.div`
   padding-bottom: 80px;
 `;
 
-const TalentTitle = styled(AboutTitle)`
-  color: var(--tColor);
+const PosterImg = styled.img`
+  width: 100%;
 `;
 
-const TalentDescription = styled(AboutDescription)`
+// const TalentTitle = styled(AboutTitle)`
+//   color: var(--tColor);
+// `;
+
+// const TalentDescription = styled(AboutDescription)`
+//   color: var(--darkText);
+// `;
+
+const AboutLocations = styled.div`
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 48px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+`;
+
+const AboutLocation = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const LocationImageBox = styled.div`
+  width: 202px;
+  height: 202px;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 2, 2, 0.0001) 0%,
+    rgba(93, 2, 2, 0.197569) 100%
+  );
+`;
+
+const LocationImage = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+
+const LocationName = styled.h2`
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 5px;
   color: var(--darkText);
+  text-transform: uppercase;
+  margin-top: 48px;
+  text-align: center;
+`;
+
+const ViewLocation = styled.button`
+  text-decoration: none;
+  padding: 18px;
+  background-color: var(--tColor);
+  color: var(--light);
+  border-radius: 8px;
+  border: none;
+  margin-top: 32px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 21.68px;
+  letter-spacing: 1px;
 `;

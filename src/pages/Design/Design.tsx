@@ -25,16 +25,20 @@ const Design = () => {
     };
 
     getData();
-  }, []);
+  }, [category]);
+
+  const bannerDescription =
+    category === "web"
+      ? "We build websites that serve as powerful marketing tools and bring memorable brand experiences."
+      : category === "app"
+      ? "Our mobile designs bring intuitive digital solutions to your customers right at their fingertips."
+      : "We deliver eye-catching branding materials that are tailored to meet your business objectives.";
 
   return (
     <Page>
       <Banner>
-        <BannerTitle>Web Design</BannerTitle>
-        <BannerDescription>
-          We build websites that serve as powerful marketing tools and bring
-          memorable brand experiences.
-        </BannerDescription>
+        <BannerTitle>{category} Design</BannerTitle>
+        <BannerDescription>{bannerDescription}</BannerDescription>
       </Banner>
       <Wrapper>
         {data.length > 0 ? <DesignProjects projects={data} /> : null}
@@ -82,6 +86,7 @@ const BannerTitle = styled.h1`
   line-height: 36px;
   color: var(--light);
   text-align: center;
+  text-transform: capitalize;
 `;
 
 const BannerDescription = styled.h2`
